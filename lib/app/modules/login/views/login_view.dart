@@ -64,7 +64,7 @@ class LoginView extends GetView<LoginController> {
                   gapH32,
                   Align(
                     child: CreateAcount(
-                      clickActionHandle: (){},
+                      clickActionHandle: controller.onSignUpClicked,
                     ),
                   ),
                   gapH16,
