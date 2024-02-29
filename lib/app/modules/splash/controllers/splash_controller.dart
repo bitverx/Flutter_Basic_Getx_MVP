@@ -17,7 +17,7 @@ class SplashController extends GetxController {
 
     super.onReady();
         Future.delayed(Duration(seconds: 5), () {
-      Get.offAndToNamed(Routes.HOME); // Replace '/home' with the actual route name of your home screen
+      Get.offAndToNamed(Routes.LOGIN); // Replace '/home' with the actual route name of your home screen
     });
   }
 
