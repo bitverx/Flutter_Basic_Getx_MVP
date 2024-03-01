@@ -43,6 +43,7 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+      transition: Transition.leftToRight
     ),
   ];
 }

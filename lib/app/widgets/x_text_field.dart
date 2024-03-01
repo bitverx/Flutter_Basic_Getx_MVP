@@ -104,18 +104,18 @@ class MTextField extends StatelessWidget {
 
   OutlineInputBorder get _border => OutlineInputBorder(
         borderSide: BorderSide(
-          color: XColors.xenGrey[300]!,
+          color: XColors.xGrey[300]!,
         ),
       );
 
   Color get _filledColor {
-    return isEnabled ? filledColor ?? Colors.white : XColors.xenGrey[100]!;
+    return isEnabled ? filledColor ?? Colors.white : XColors.xGrey[100]!;
   }
 
   TextStyle? get _textStyle {
     if (!isEnabled) {
       return Get.textTheme.bodyText2?.copyWith(
-        color: XColors.xenBlack[200],
+        color: XColors.xBlack[200],
         fontWeight: FontWeight.w400,
       );
     }
@@ -123,7 +123,7 @@ class MTextField extends StatelessWidget {
     if (textStyle != null) return textStyle;
 
     return Get.textTheme.bodyText2?.copyWith(
-      color: isEnabled ? XColors.xenBlack : XColors.xenBlack[200],
+      color: isEnabled ? XColors.xBlack : XColors.xBlack[200],
       fontWeight: FontWeight.w400,
     );
   }
@@ -161,8 +161,8 @@ class MTextField extends StatelessWidget {
       decoration: InputDecoration(
         errorStyle: TextStyle(height: errorHeight),
         labelText: hintText,
-        hintStyle: TextStyle(color: XColors.xenGrey[400]),
-        floatingLabelStyle: const TextStyle(color: XColors.xenGreen),
+        hintStyle: TextStyle(color: XColors.xGrey[400]),
+        floatingLabelStyle: const TextStyle(color: XColors.xGreen),
         fillColor: _filledColor,
         filled: true,
         errorText: fieldData.error,
@@ -175,7 +175,7 @@ class MTextField extends StatelessWidget {
                 icon: Icon(fieldData.passwordVisible.value ? Icons.visibility : Icons.visibility_off),
                 // SvgPicture.asset(
                 //   fieldData.passwordVisible.value ? 'assets/images/ic_show_password.svg' : 'assets/images/ic_hide_password.svg',
-                //   color: XColors.xenBlack[300],
+                //   color: XColors.xBlack[300],
                 //   width: 24,
                 //   height: 24,
                 // ),
@@ -186,7 +186,7 @@ class MTextField extends StatelessWidget {
                     icon: Icon(
                       Icons.close,
                       size: 20,
-                      color: XColors.xenBlack[400],
+                      color: XColors.xBlack[400],
                     ),
                     onPressed: () {
                       fieldData.controller.clear();

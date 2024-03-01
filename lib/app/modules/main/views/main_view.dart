@@ -50,7 +50,7 @@ class BottomNavigationMenu extends GetView<MainController> {
             () => BottomNavigationButton(
               icon: SvgPicture.asset(
                 ImageAsset.icHome,
-                color: controller.selectedTab.value == SelectedTab.home ? XColors.primary : XColors.xenGrey,
+                color: controller.selectedTab.value == SelectedTab.home ? XColors.primary : XColors.xGrey,
                 height: 24,
                 width: 24,
               ),
@@ -63,7 +63,7 @@ class BottomNavigationMenu extends GetView<MainController> {
             () => BottomNavigationButton(
               icon: SvgPicture.asset(
                 ImageAsset.icHome,
-                color: controller.selectedTab.value == SelectedTab.profile ? XColors.primary : XColors.xenGrey,
+                color: controller.selectedTab.value == SelectedTab.profile ? XColors.primary : XColors.xGrey,
                 height: 24,
                 width: 24,
               ),
@@ -98,7 +98,7 @@ class BottomNavigationButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = Get.width;
-    final color = isSelected ? XColors.primary : XColors.xenBlack[400]!;
+    final color = isSelected ? XColors.primary : XColors.xBlack[400]!;
     return InkWell(
       onTap: onPressed,
       child: SizedBox(
@@ -136,7 +136,7 @@ class BottomNavigationButton extends StatelessWidget {
           if (isShowAlert)
             const Align(
               alignment: Alignment.topRight,
-              child: Icon(Icons.error, size: 12, color: XColors.xenRed),
+              child: Icon(Icons.error, size: 12, color: XColors.xRed),
             ),
         ],
       ),

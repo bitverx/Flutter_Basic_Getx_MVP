@@ -5,13 +5,14 @@ import 'package:get/get.dart';
 import 'package:getx_mvp/app/assets/assets.dart';
 import 'package:getx_mvp/app/constants/app_sizes.dart';
 import 'package:getx_mvp/app/constants/string_constants.dart';
+import 'package:getx_mvp/app/modules/login/controllers/login_controller.dart';
 import 'package:getx_mvp/app/widgets/button.dart';
 import 'package:getx_mvp/app/modules/login/widgets/create_account.dart';
 import 'package:getx_mvp/app/modules/login/widgets/forgot_password.dart';
 import 'package:getx_mvp/app/theme/colors.dart';
 import 'package:getx_mvp/app/widgets/x_text_field.dart';
 
-import '../controllers/login_controller.dart';
+
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
@@ -36,13 +37,13 @@ class LoginView extends GetView<LoginController> {
                   Text(
                     NameConstant.kSignIn,
                     style: Get.textTheme.headlineMedium?.copyWith(
-                        color: XColors.xenBlack, fontWeight: FontWeight.w700),
+                        color: XColors.xBlack, fontWeight: FontWeight.w700),
                   ),
                   gapH16,
                   Text(
                     NameConstant.kPleaseLogin,
                     style: Get.textTheme.titleSmall?.copyWith(
-                        color: XColors.xenGrey[800],
+                        color: XColors.xGrey[800],
                         fontWeight: FontWeight.w400),
                   ),
                   gapH32,
@@ -57,7 +58,7 @@ class LoginView extends GetView<LoginController> {
                   ),
                   gapH32,
                   Button.primary(
-                    color: XColors.xenGreen[500],
+                    color: XColors.xGreen[500],
                     onPressed: controller.onActionLoginClicked,
                     child: const Text(NameConstant.kLogin),
                   ),

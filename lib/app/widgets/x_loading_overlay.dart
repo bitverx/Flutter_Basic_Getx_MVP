@@ -25,13 +25,13 @@ class XLoadingOverlay extends StatelessWidget {
 
   Widget _buildLoading() {
     return Container(
-      color: XColors.xenBlack[100]?.withOpacity(0.48),
+      color: XColors.xBlack[100]?.withOpacity(0.48),
       child: Center(
         child: Container(
           width: 128,
           height: 128,
           decoration: BoxDecoration(
-            color: XColors.xenBlack[200]?.withOpacity(0.72),
+            color: XColors.xBlack[200]?.withOpacity(0.72),
             borderRadius: BorderRadius.circular(4),
           ),
           child: const Center(

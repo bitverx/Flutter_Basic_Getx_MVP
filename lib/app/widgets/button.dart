@@ -164,7 +164,7 @@ class XBackButton extends StatelessWidget {
     Key? key,
     this.icon = Icons.arrow_back_sharp,
     this.onPressed,
-    this.color = XColors.xenBlack,
+    this.color = XColors.xBlack,
   }) : super(key: key);
 
   final IconData icon;
@@ -226,7 +226,7 @@ class ActionElevatedButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-            primary: color,
+            backgroundColor: color,
             padding: padding,
             elevation: elevation,
           ),
@@ -249,8 +249,8 @@ class XFilterButton extends StatelessWidget {
       child: SizedBox(
         child: OutlinedButton(
           onPressed: onPressed,
-          style: OutlinedButton.styleFrom(side: const BorderSide(color: XColors.xenBlue)),
-          child: Text('Filter', style: Get.textTheme.bodyText3Bold?.copyWith(color: XColors.xenBlue)),
+          style: OutlinedButton.styleFrom(side: const BorderSide(color: XColors.xBlue)),
+          child: Text('Filter', style: Get.textTheme.bodyText3Bold?.copyWith(color: XColors.xBlue)),
         ),
       ),
     ).paddingSymmetric(horizontal: 16);
@@ -279,12 +279,12 @@ class CheckedButton extends StatelessWidget {
         ? XColors.primary[100]
         : isEnabled
             ? Colors.white
-            : XColors.xenGrey[100];
+            : XColors.xGrey[100];
     final borderColor = isChecked
         ? XColors.primary
         : isEnabled
-            ? XColors.xenGrey
-            : XColors.xenGrey[300]!;
+            ? XColors.xGrey
+            : XColors.xGrey[300]!;
     return InkWell(
       onTap: () {
         if (isEnabled) {

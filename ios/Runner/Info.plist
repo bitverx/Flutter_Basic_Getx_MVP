@@ -34,6 +34,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+    <string>Allow access to the camera to take photos and videos</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Allow access to the photo library to select photos and videos</string>
+	<key>NSLocalNetworkUsageDescription</key>
+    <string>Allow this app to send you notifications.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
