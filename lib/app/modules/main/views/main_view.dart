@@ -62,7 +62,7 @@ class BottomNavigationMenu extends GetView<MainController> {
           Obx(
             () => BottomNavigationButton(
               icon: SvgPicture.asset(
-                ImageAsset.icHome,
+                ImageAsset.xProfile,
                 color: controller.selectedTab.value == SelectedTab.profile ? XColors.primary : XColors.xGrey,
                 height: 24,
                 width: 24,
