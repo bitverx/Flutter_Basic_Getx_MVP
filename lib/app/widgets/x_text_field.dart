@@ -173,12 +173,6 @@ class MTextField extends StatelessWidget {
         suffixIcon: fieldData.isPassword
             ? IconButton(
                 icon: Icon(fieldData.passwordVisible.value ? Icons.visibility : Icons.visibility_off),
-                // SvgPicture.asset(
-                //   fieldData.passwordVisible.value ? 'assets/images/ic_show_password.svg' : 'assets/images/ic_hide_password.svg',
-                //   color: XColors.xBlack[300],
-                //   width: 24,
-                //   height: 24,
-                // ),
                 onPressed: fieldData.togglePasswordVisible,
               )
             : fieldData.isClear
