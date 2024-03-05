@@ -15,8 +15,7 @@ class LoginController extends GetxController with LoadingMixin {
   final passwordFieldData =
       TextFieldData(validator: Validator.passwordValidator, isPassword: true);
 
-  void onForgotPasswordClicked() =>
-      print('Forgot Password'); //Get.toNamed(Routes.FORGOT_PASSWORD);
+  void onForgotPasswordClicked() {} //Get.toNamed(Routes.FORGOT_PASSWORD);
   void onSignUpClicked() => Get.offAllNamed(Routes.SIGNUP);
   Future<void> onActionLoginClicked() async {
     if (!formKey.currentState!.validate()) {
@@ -39,7 +38,6 @@ class LoginController extends GetxController with LoadingMixin {
         iOptions: _getIOSOptions(),
         aOptions: _getAndroidOptions(),
       );
-      print(emailFieldData.textInField);
        Get.offNamed(Routes.MAIN);
           isLoading = false;
     });
