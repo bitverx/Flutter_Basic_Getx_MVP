@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:getx_mvp/app/modules/home/controllers/home_controller.dart';
+import 'package:getx_mvp/app/theme/theme.dart';
 
-import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-      final authService = Get.find<HomeController>();
+
 
     return Scaffold(
       appBar: AppBar(
@@ -18,16 +20,15 @@ class HomeView extends GetView<HomeController> {
       body:  Column(
         children: [
           Center(
-            child: Obx( 
-              ()=>
+            child: 
                Text(
-                'HomeView is working ${controller.count}',
-                style: TextStyle(fontSize: 20),
+                'HomeView is working ',
+                style: Get.textTheme.headline2Bold,
               ),
-            ),
+            
           
           ),
-          TextButton(onPressed: controller.increment, child: Text('press'))
+        
         ],
       ),
     );
