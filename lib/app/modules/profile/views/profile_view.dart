@@ -16,32 +16,35 @@ class ProfileView extends GetView<ProfileController> {
         title: const Text('ProfileView'),
         centerTitle: true,
       ),
-      body:  Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(children: [
-          IconButton(onPressed: (){
-            Get.offAllNamed(Routes.LOGIN);
-          }, icon: Row(children: [
-            Icon(Icons.logout_outlined),
-            gapW4,
-            Text('Logout')
-          ],)),
-          Obx(() => Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: controller.store.allTransactionList.length,
-              itemBuilder: (context,index){
-                var news = controller.store.allTransactionList[index];
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ShadowContainer(
-                    
-                    child: Text(news.title).paddingAll(5)),
-                );
+      body:  Obx(()=>
+         Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(children: [
+            Row(children: [Text('user email:'), Text(controller.store.email.value)],),
+            gapH12,
+            IconButton(onPressed: (){
+              showDialog(
+            context: context,
+            builder: (ctx) => AlertDialog(
+              title: const Text('Logout'),
+              content: const Text('Are you sure you want to logout?'),
+              actions: [
+                InkWell(
+                  onTap: controller.onActionLogout,
+                  child: const Text('Okay').paddingSymmetric(horizontal: 8, vertical: 4),
+                ),
+              ],
+            ),
+          );
+              
+            }, icon: const Row(children: [
+              Icon(Icons.logout_outlined),
+              gapW4,
+              Text('Logout')
+            ],)),
             
-              }),
-          ))
-        ],),
+          ],),
+        ),
       )
     );
   }

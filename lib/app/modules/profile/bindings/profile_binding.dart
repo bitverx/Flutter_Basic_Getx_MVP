@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:getx_mvp/app/modules/profile/store/news_store.dart';
+import 'package:getx_mvp/app/modules/profile/store/store.dart';
 
 import '../controllers/profile_controller.dart';
 
@@ -8,7 +8,8 @@ class ProfileBinding extends Bindings {
   void dependencies() {
     Get.lazyPut<ProfileController>(
       () => ProfileController(
-        store: NewsStoreFactory().create(),
+        store: ProfileStoreFactory().create(),
+        logoutHelper: Get.find(),
       ),
     );
   }

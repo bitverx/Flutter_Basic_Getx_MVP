@@ -16,13 +16,11 @@ class NewsStore with LoadingMixin {
     allTransactionList.clear();
 
     final result = await repository.getTransactionList();
-    print('resul in store $result');
 
     result.when(
       success: (payload) {
         if (payload != null) {
           allTransactionList.value = payload;
-
         }
       },
       error: (message) {

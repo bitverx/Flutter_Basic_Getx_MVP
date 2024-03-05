@@ -24,7 +24,7 @@ class ShadowContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(4),
         boxShadow: [
           BoxShadow(
-            color: XColors.xenGrey.withOpacity(0.5),
+            color: XColors.xGrey.withOpacity(0.5),
             offset: const Offset(0.0, 1.0),
             blurRadius: 14.0,
           ),

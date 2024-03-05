@@ -10,7 +10,6 @@ class NewsRepository {
 
   Future<NetworkResult<List<PostResponse>>> getTransactionList() async {
     var data = newsNetworkService.getTransactionList();
-    print('in repositry $data');
     return  data;
   }
 }

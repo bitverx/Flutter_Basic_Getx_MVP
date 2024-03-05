@@ -1,41 +1,48 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvp/app/mixins/loading_mixin.dart';
-import 'package:getx_mvp/app/modules/profile/store/news_store.dart';
+import 'package:getx_mvp/app/modules/profile/store/store.dart';
+import 'package:getx_mvp/app/utils/logout_helper.dart';
 
 class ProfileController extends GetxController with LoadingMixin {
-  ProfileController({required this.store});
+  ProfileController({required this.store, required this.logoutHelper});
+  final LogoutHelper logoutHelper;
+  final ProfileStore store;
 
-  final NewsStore store;
+  Future<void> getUserDetails() async {
+    const storage = FlutterSecureStorage();
 
-  final count = 0.obs;
+    final email = await storage.read(
+      key: 'email',
+      iOptions: _getIOSOptions(),
+      aOptions: _getAndroidOptions(),
+    );
 
-   Future<void> getTransactionList() async {
-   isLoading = true;
+    final password = await storage.read(
+      key: 'password',
+      iOptions: _getIOSOptions(),
+      aOptions: _getAndroidOptions(),
+    );
 
-    await store.getTransactionList();
-
-    isLoading = false;
+    if (email != null) {
+      store.email.value = email;
+    }
   }
+
   @override
   void onInit() {
-     print('ohh helloooo');
-     store.allTransactionList.clear();
+    getUserDetails();
     super.onInit();
-   
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-      print('ohh rradyyyy');
+  void onActionLogout() {
+    logoutHelper.logout();
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-      print('ohh closeeee');
+  IOSOptions _getIOSOptions() => IOSOptions(accountName: _getAccountName());
 
-  }
+  AndroidOptions _getAndroidOptions() =>
+      const AndroidOptions(encryptedSharedPreferences: true);
 
-  void increment() => count.value++;
+  String? _getAccountName() => 'MvpGetx';
 }

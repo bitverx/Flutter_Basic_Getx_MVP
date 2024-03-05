@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvp/app/mixins/loading_mixin.dart';
 import 'package:getx_mvp/app/routes/app_pages.dart';
@@ -16,14 +17,40 @@ class LoginController extends GetxController with LoadingMixin {
 
   void onForgotPasswordClicked() =>
       print('Forgot Password'); //Get.toNamed(Routes.FORGOT_PASSWORD);
-
+  void onSignUpClicked() => Get.offAllNamed(Routes.SIGNUP);
   Future<void> onActionLoginClicked() async {
     if (!formKey.currentState!.validate()) {
       return;
     }
-    loading.value = true;
+    isLoading = true;
+    Future.delayed(const Duration(seconds: 3), () async {
+      const storage = FlutterSecureStorage();
 
-    Get.offNamed(Routes.MAIN);
-    loading.value = false;
+      await storage.write(
+        key: 'email',
+        value: emailFieldData.textInField,
+        iOptions: _getIOSOptions(),
+        aOptions: _getAndroidOptions(),
+      );
+
+      await storage.write(
+        key: 'password',
+        value: passwordFieldData.textInField,
+        iOptions: _getIOSOptions(),
+        aOptions: _getAndroidOptions(),
+      );
+      print(emailFieldData.textInField);
+       Get.offNamed(Routes.MAIN);
+          isLoading = false;
+    });
+   
+
   }
+
+  IOSOptions _getIOSOptions() => IOSOptions(accountName: _getAccountName());
+
+  AndroidOptions _getAndroidOptions() =>
+      const AndroidOptions(encryptedSharedPreferences: true);
+
+  String? _getAccountName() => 'MvpGetx';
 }
