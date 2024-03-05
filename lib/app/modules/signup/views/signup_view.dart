@@ -7,6 +7,7 @@ import 'package:getx_mvp/app/constants/app_sizes.dart';
 import 'package:getx_mvp/app/constants/string_constants.dart';
 import 'package:getx_mvp/app/modules/signup/widgets/already_account.dart';
 import 'package:getx_mvp/app/theme/colors.dart';
+import 'package:getx_mvp/app/theme/theme.dart';
 import 'package:getx_mvp/app/widgets/button.dart';
 import 'package:getx_mvp/app/widgets/x_loading_overlay.dart';
 import 'package:getx_mvp/app/widgets/x_text_field.dart';
@@ -17,8 +18,8 @@ class SignupView extends GetView<SignupController> {
   const SignupView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Obx(()=>
-       XLoadingOverlay(
+    return Obx(
+      () => XLoadingOverlay(
         loading: controller.loading,
         child: Scaffold(
           body: SingleChildScrollView(
@@ -26,7 +27,6 @@ class SignupView extends GetView<SignupController> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 gapH120,
-               
                 Form(
                   key: controller.formKeySignUp,
                   child: Column(
@@ -44,26 +44,51 @@ class SignupView extends GetView<SignupController> {
                             color: XColors.xBlack[800],
                             fontWeight: FontWeight.w400),
                       ),
-                      
                       gapH32,
-                       
                       Center(
                         child: Container(
-                          child:controller.store.selectedImage.value ==null?
-                          Text('image not selected') :
-                          CircleAvatar(
-            radius: 40,
-            backgroundImage: FileImage(File(controller.store.selectedImage.value!)),
-          )
-                         ),
+                            child: controller.store.selectedImage.value == null
+                                ? const CircleAvatar(
+                                    radius: 40,
+                                    backgroundColor: XColors.xGrey,
+                                  )
+                                : CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage: FileImage(File(
+                                        controller.store.selectedImage.value!)),
+                                  )),
                       ),
-                      TextButton(onPressed: (){
-                        controller.pickImageGallery();
-                      }, child: Text('gallery')),
-                      TextButton(onPressed: (){
-                        controller.captureImage();
-                      }, child: Text('Capture')),
-                   
+                      gapH16,
+                      Button.primary(
+                          color: XColors.primary,
+                          onPressed: () {
+                            controller.pickImageGallery();
+                          },
+                          child: Text(
+                            'gallery',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText2Bold
+                                ?.copyWith(
+                                  color: Colors.white,
+                                ),
+                          )),
+                      gapH16,
+                      Button.primary(
+                          color: XColors.primary,
+                          onPressed: () {
+                            controller.captureImage();
+                          },
+                          child: Text(
+                            'Capture',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyText2Bold
+                                ?.copyWith(
+                                  color: Colors.white,
+                                ),
+                          )),
+                      gapH16,
                       MTextField(
                         fieldData: controller.nameFieldData,
                         hintText: 'Name',
@@ -73,7 +98,7 @@ class SignupView extends GetView<SignupController> {
                         fieldData: controller.emailFieldData,
                         hintText: 'Email',
                       ),
-                        gapH16,
+                      gapH16,
                       MTextField(
                         fieldData: controller.passwordFieldData,
                         hintText: 'Password',
@@ -95,9 +120,6 @@ class SignupView extends GetView<SignupController> {
                           clickActionHandle: controller.onSignInClicked,
                         ),
                       ),
-                      
-                      
-                    
                     ],
                   ),
                 ).paddingSymmetric(horizontal: 24),

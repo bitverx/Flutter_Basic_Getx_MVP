@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:getx_mvp/app/constants/app_sizes.dart';
 import 'package:getx_mvp/app/modules/home/controllers/home_controller.dart';
 import 'package:getx_mvp/app/theme/theme.dart';
 import 'package:getx_mvp/app/widgets/shadow_container.dart';
@@ -21,25 +22,28 @@ class HomeView extends GetView<HomeController> {
       ),
       body:  XLoadingOverlay(
         loading: controller.loading,
-        child: Column(
-          children: [
-            Obx(() => Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: controller.store.allTransactionList.length,
-                itemBuilder: (context,index){
-                  var news = controller.store.allTransactionList[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ShadowContainer(
-                      
-                      child: Text(news.title).paddingAll(5)),
-                  );
-              
-                }),
-            )),
-          
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: Sizes.p16),
+          child: Column(
+            children: [
+              Obx(() => Expanded(
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: controller.store.allTransactionList.length,
+                  itemBuilder: (context,index){
+                    var news = controller.store.allTransactionList[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ShadowContainer(
+                        
+                        child: Text(news.title).paddingAll(5)),
+                    );
+                
+                  }),
+              )),
+            
+            ],
+          ),
         ),
       ),
     );
