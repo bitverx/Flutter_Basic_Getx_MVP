@@ -31,10 +31,10 @@ void showErrorSnackbar({required String message, bool showOnBottom = false}) {
     ).paddingOnly(top: 8),
     margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
     borderRadius: 2,
-    backgroundColor: XColors.xenRed,
+    backgroundColor: XColors.xRed,
     boxShadows: [
       const BoxShadow(
-        color: XColors.xenGrey,
+        color: XColors.xGrey,
         spreadRadius: 1,
         blurRadius: 4,
       ),
@@ -65,10 +65,10 @@ void showNewErrorSnackbar({required String message, bool showOnBottom = false}) 
     ),
     margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
     borderRadius: 2,
-    backgroundColor: XColors.xenRed[200]!,
+    backgroundColor: XColors.xRed[200]!,
     boxShadows: [
       const BoxShadow(
-        color: XColors.xenGrey,
+        color: XColors.xGrey,
         spreadRadius: 1,
         blurRadius: 4,
       ),
@@ -101,10 +101,10 @@ void showSuccessSnackbar({required String message, bool showOnBottom = false}) {
     ),
     margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
     borderRadius: 2,
-    backgroundColor: XColors.xenGreen[200]!,
+    backgroundColor: XColors.xGreen[200]!,
     boxShadows: [
       const BoxShadow(
-        color: XColors.xenGrey,
+        color: XColors.xGrey,
         spreadRadius: 1,
         blurRadius: 4,
       ),
@@ -134,10 +134,10 @@ void showSuccessSnackbarWidget({required Widget messageWidget, bool showOnBottom
     ),
     margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
     borderRadius: 2,
-    backgroundColor: XColors.xenGreen[200]!,
+    backgroundColor: XColors.xGreen[200]!,
     boxShadows: [
       const BoxShadow(
-        color: XColors.xenGrey,
+        color: XColors.xGrey,
         spreadRadius: 1,
         blurRadius: 4,
       ),
@@ -170,10 +170,10 @@ void showInfoSnackbar({required String message, bool showOnBottom = false}) {
     ),
     margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
     borderRadius: 2,
-    backgroundColor: XColors.xenBlue[200]!,
+    backgroundColor: XColors.xBlue[200]!,
     boxShadows: [
       const BoxShadow(
-        color: XColors.xenGrey,
+        color: XColors.xGrey,
         spreadRadius: 1,
         blurRadius: 4,
       ),

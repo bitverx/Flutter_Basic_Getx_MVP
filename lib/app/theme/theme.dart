@@ -23,13 +23,13 @@ ThemeData _createAppTheme(ThemeData baseTheme) {
 
 InputDecorationTheme _createInputDecorationTheme(TextTheme textTheme) {
   return InputDecorationTheme(
-    hintStyle: TextStyle(fontSize: 14, color: XColors.xenBlack[300]),
+    hintStyle: TextStyle(fontSize: 14, color: XColors.xBlack[300]),
     contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-    enabledBorder: _borderColor(XColors.xenGrey),
-    focusedBorder: _borderColor(XColors.xenGrey),
-    errorBorder: _borderColor(XColors.xenRed),
-    focusedErrorBorder: _borderColor(XColors.xenRed),
-    errorStyle: textTheme.bodyText3?.copyWith(color: XColors.xenRed),
+    enabledBorder: _borderColor(XColors.xGrey),
+    focusedBorder: _borderColor(XColors.xGrey),
+    errorBorder: _borderColor(XColors.xRed),
+    focusedErrorBorder: _borderColor(XColors.xRed),
+    errorStyle: textTheme.bodyText3?.copyWith(color: XColors.xRed),
   );
 }
 
@@ -42,26 +42,26 @@ OutlineInputBorder _borderColor(Color color) {
 TabBarTheme createTabBarTheme(TextTheme textTheme) {
   return TabBarTheme(
     indicator: const UnderlineTabIndicator(
-      borderSide: BorderSide(width: 2, color: XColors.xenGreen),
+      borderSide: BorderSide(width: 2, color: XColors.xGreen),
       insets: EdgeInsets.symmetric(horizontal: 48),
     ),
     labelStyle: textTheme.bodyText2Bold,
-    labelColor: XColors.xenBlue,
-    unselectedLabelColor: XColors.xenGrey,
+    labelColor: XColors.xBlue,
+    unselectedLabelColor: XColors.xGrey,
   );
 }
 
 TextTheme _createTextTheme(TextTheme baseTheme) {
   return GoogleFonts.poppinsTextTheme(baseTheme).copyWith(
-    displayLarge: const TextStyle(fontSize: 40, color: XColors.xenBlack, fontWeight: FontWeight.w500),
-    displayMedium: const TextStyle(fontSize: 32, color: XColors.xenBlack, fontWeight: FontWeight.w500),
-    displaySmall: const TextStyle(fontSize: 28, color: XColors.xenBlack, fontWeight: FontWeight.w500),
-    headlineMedium: const TextStyle(fontSize: 24, color: XColors.xenBlack, fontWeight: FontWeight.w500),
-    headlineSmall: const TextStyle(fontSize: 20, color: XColors.xenBlack, fontWeight: FontWeight.w500),
-    titleLarge: const TextStyle(fontSize: 16, color: XColors.xenBlack, fontWeight: FontWeight.w500),
-    bodyLarge: const TextStyle(fontSize: 16, color: XColors.xenBlack),
-    bodyMedium: const TextStyle(fontSize: 14, color: XColors.xenBlack),
-    labelSmall: const TextStyle(fontSize: 12, color: XColors.xenBlack, fontWeight: FontWeight.w600),
+    displayLarge: const TextStyle(fontSize: 40, color: XColors.xBlack, fontWeight: FontWeight.w500),
+    displayMedium: const TextStyle(fontSize: 32, color: XColors.xBlack, fontWeight: FontWeight.w500),
+    displaySmall: const TextStyle(fontSize: 28, color: XColors.xBlack, fontWeight: FontWeight.w500),
+    headlineMedium: const TextStyle(fontSize: 24, color: XColors.xBlack, fontWeight: FontWeight.w500),
+    headlineSmall: const TextStyle(fontSize: 20, color: XColors.xBlack, fontWeight: FontWeight.w500),
+    titleLarge: const TextStyle(fontSize: 16, color: XColors.xBlack, fontWeight: FontWeight.w500),
+    bodyLarge: const TextStyle(fontSize: 16, color: XColors.xBlack),
+    bodyMedium: const TextStyle(fontSize: 14, color: XColors.xBlack),
+    labelSmall: const TextStyle(fontSize: 12, color: XColors.xBlack, fontWeight: FontWeight.w600),
   );
 }
 

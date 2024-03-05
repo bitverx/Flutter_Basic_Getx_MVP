@@ -30,7 +30,7 @@ class ClosableAppBar extends StatelessWidget {
       leading: IconButton(
         icon: const Icon(
           Icons.close,
-          color: XColors.xenBlack,
+          color: XColors.xBlack,
           size: 24,
         ),
         onPressed: onClosePressed,
@@ -57,7 +57,7 @@ class BackAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back,
-          color: XColors.xenBlack,
+          color: XColors.xBlack,
           size: 24,
         ),
         onPressed: onBackPressed ?? () => Navigator.of(context).maybePop(),

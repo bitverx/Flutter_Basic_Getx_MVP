@@ -4,9 +4,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:getx_mvp/app/assets/assets.dart';
 import 'package:getx_mvp/app/constants/string_constants.dart';
+import 'package:getx_mvp/app/modules/splash/controllers/splash_controller.dart';
 import 'package:getx_mvp/app/theme/theme.dart';
-
-import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
   const SplashView({Key? key}) : super(key: key);
