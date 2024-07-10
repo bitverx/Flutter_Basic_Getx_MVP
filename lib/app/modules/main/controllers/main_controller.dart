@@ -1,28 +1,21 @@
 import 'package:get/get.dart';
+import 'package:getx_mvp/app/mixins/loading_mixin.dart';
+import 'package:getx_mvp/app/modules/home/controllers/home_controller.dart';
 
 enum SelectedTab { home, profile, notification, other }
-class MainController extends GetxController {
-  //TODO: Implement MainController
 
-  final count = 0.obs;
+class MainController extends GetxController with LoadingMixin {
   final selectedTab = SelectedTab.home.obs;
   @override
   void onInit() {
     super.onInit();
+    makeNetworkCalls();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  Future<void> makeNetworkCalls() async {
+    Get.find<HomeController>().getTransactionList();
   }
 
-    void onHomePressed() => selectedTab.value = SelectedTab.home;
-      void onMyProfilePressed() => selectedTab.value = SelectedTab.profile;
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+  void onHomePressed() => selectedTab.value = SelectedTab.home;
+  void onMyProfilePressed() => selectedTab.value = SelectedTab.profile;
 }

@@ -34,6 +34,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used to captue audio for image picker plugin</string>
 	<key>NSCameraUsageDescription</key>
     <string>Allow access to the camera to take photos and videos</string>
     <key>NSPhotoLibraryUsageDescription</key>
